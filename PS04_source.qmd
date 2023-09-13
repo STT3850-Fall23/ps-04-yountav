@@ -176,7 +176,7 @@ We found a positive correlation coefficient between `trump_support` and `poverty
 :::
 
 ::: {.callout-important icon="false" collapse="false" title="Problem 2 Answers"}
--   Delete this and put your text answer here.
+-   No, because this graph only demonstrates that the more white households in poverty there are, the more this will cause an increase in Trump supporters. This does not demonstrate a correlation between Trump's policies and their benefit to white impoverished households or that increasing poverty will necessarily benefit the Trump campaign. 
 :::
 
 ## Making Predictions
@@ -204,11 +204,13 @@ What percent of Trump support would you expect at a value of 6% white poverty?
 
 ::: {.callout-important icon="false" collapse="false" title="Problem 3 Answers"}
 ```{r}
-# Type your code and comments inside the code chunk
+y_hat = 30.8064 + 2.0591 * 6
+y_hat
+predict(poverty_mod, newdata = data.frame(poverty = 6))
 
 ```
 
--   Delete this and put your text answer here.
+-   Using the least squares regression line of the `trump_support` and `poverty` relationship, the predicted percentage of Trump support at 6% white poverty is about 43% Trump support. 
 :::
 
 ::: {.callout-note icon="false" title="Problem 4"}
