@@ -100,7 +100,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">Last modified on September 13, 2023 20:51:22 Eastern Daylight Time</p>
+      <p class="date">Last modified on September 14, 2023 09:48:14 Eastern Daylight Time</p>
     </div>
   </div>
   
@@ -836,11 +836,16 @@ Problem 8 Answers
 </div>
 <div id="callout-24" class="callout-24-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
+<p><span class="math display">\[\widehat{\text{trump\_support}} = 58.3282 + -0.2691 \times \text{non_white}\]</span></p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Type your code and comments inside the code chunk</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(nw_mod, <span class="at">newdata =</span> <span class="fu">data.frame</span>(<span class="at">non_white =</span> <span class="dv">70</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       1 
+39.48989 </code></pre>
+</div>
 </div>
 <ul>
-<li>Delete this and put your text answer here.</li>
+<li>The numerical prediction for the level of Trump support in a region that has a population with 70% identifying as a person of color is 39.49%.</li>
 </ul>
 </div>
 </div>
@@ -871,7 +876,7 @@ Problem 9 Answers
 <div id="callout-26" class="callout-26-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Type your code and comments inside the code chunk</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Type your code and comments inside the code chunk</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>Delete this and put your text answer here.</li>
@@ -908,11 +913,11 @@ Problem 10 Answers
 <div id="callout-28" class="callout-28-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Type your code and comments inside the code chunk</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Type your code and comments inside the code chunk</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>A.</strong> Delete this and put your text answer here.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Type your code and comments inside the code chunk</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Type your code and comments inside the code chunk</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>B.</strong> Delete this and put your text answer here.</p>
 <p><strong>C.</strong> Delete this and put your text answer here.</p>
@@ -964,7 +969,7 @@ Tip
 </div>
 </div>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>R version 4.2.3 (2023-03-15)
 Platform: x86_64-pc-linux-gnu (64-bit)

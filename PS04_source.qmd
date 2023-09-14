@@ -321,12 +321,13 @@ Make a numerical prediction for the level of trump support for a region that has
 :::
 
 ::: {.callout-important icon="false" collapse="false" title="Problem 8 Answers"}
-```{r}
-# Type your code and comments inside the code chunk
 
+$$\widehat{\text{trump\_support}} = `r round(coef(nw_mod)[1],4)` + `r round(coef(nw_mod)[2],4)` \times \text{non_white}$$
+```{r}
+predict(nw_mod, newdata = data.frame(non_white = 70))
 ```
 
--   Delete this and put your text answer here.
+-   The numerical prediction for the level of Trump support in a region that has a population with 70% identifying as a person of color is 39.49%.
 :::
 
 ::: {.callout-note icon="false" title="Problem 9"}
