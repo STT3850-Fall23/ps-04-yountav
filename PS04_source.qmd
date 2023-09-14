@@ -336,11 +336,27 @@ Based on the evidence you have so far (scatterplots and correlation coefficients
 
 ::: {.callout-important icon="false" collapse="false" title="Problem 9 Answers"}
 ```{r}
-# Type your code and comments inside the code chunk
+ggplot(data = trump, aes(y = trump_support, x = poverty)) + 
+  geom_point() + 
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(x = "Percentage of white households in poverty", 
+       y = "Percentage of voters supporting Trump", 
+       title = "Trump support and white poverty in the US") +
+  theme_bw() + 
+  theme(plot.title = element_text(hjust = 0.5))
 
+
+ggplot(data = trump, aes(y = trump_support, x = non_white)) + 
+  geom_point() + 
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(x = "Percentage of non-white voters", 
+       y = "Percentage of voters supporting Trump", 
+       title = "Trump support and non-white voters in the US") +
+  theme_bw() + 
+  theme(plot.title = element_text(hjust = 0.5))
 ```
 
--   Delete this and put your text answer here.
+-   Based on the evidence above and used in previous questions, the better explanatory variable of Trump support is the `poverty` variable. 
 :::
 
 ::: {.callout-note icon="false" title="Problem 10"}
@@ -355,20 +371,28 @@ If Representative Ocasio-Cortez saw the regression line (`nw_mod`) and not the a
 
 ::: {.callout-important icon="false" collapse="false" title="Problem 10 Answers"}
 ```{r}
-# Type your code and comments inside the code chunk
+ggplot(data = trump, aes(y = trump_support, x = non_white)) + 
+  geom_point() + 
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(x = "Percentage of non-white voters", 
+       y = "Percentage of voters supporting Trump", 
+       title = "Trump support and non-white voters in the US") +
+  theme_bw() + 
+  theme(plot.title = element_text(hjust = 0.5))
 
 ```
 
-**A.** Delete this and put your text answer here.
+**A.** If Representative Ocasio-Cortez saw the regression line `nw_mod` without seeing any of the data points, her prediction of Trump support for a region in which 61% of people identify as non-white would be around 43%, give or take. 
 
 ```{r}
-# Type your code and comments inside the code chunk
-
+predict(nw_mod, newdata = data.frame(non_white = 61))
 ```
 
-**B.** Delete this and put your text answer here.
+**B.** Her prediction given the regression line would be a small overestimation by only about 1% considering the prediction model created. Using this numerical expression, the predicted value would be 41.91%
 
-**C.** Delete this and put your text answer here.
+$$\text{residual} = y - \hat{y}$$
+
+**C.** Using the residual, the predicted value using the regression line is about 43% and the value found using the data points is about 34% given that the population of non-white voters is 61%. So, the residual is -9. 
 :::
 
 # Turning in Your Work
