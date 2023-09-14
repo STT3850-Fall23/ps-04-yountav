@@ -300,13 +300,20 @@ Run a linear regression using `non_white` as the **explanatory** variable, and `
 
 ::: {.callout-important icon="false" collapse="false" title="Problem 7 Answers"}
 ```{r}
-# Type your code and comments inside the code chunk
-
+ggplot(data = trump, aes(y = trump_support, x = non_white)) + 
+  geom_point() + 
+  geom_smooth(method = "lm", se = FALSE) + 
+  labs(x = "Percentage of non-white voters", 
+       y = "Percentage of voters supporting Trump", 
+       title = "Trump support and non-white voters in the US") + 
+  theme_bw() + theme(plot.title = element_text(hjust = 0.5))
+nw_mod <- lm(trump_support ~ non_white, data = trump)
+get_regression_table(nw_mod)
 ```
 
--   Delete this and put your text answer here.
+-   When the percentage of non-white voters is at 0, the predicted average Trump support is 58.33%. 
 
--   Delete this and put your text answer here.
+-   When the percentage of non-white voters decreases by half a percentage point, there is also a decrease in the estimated Trump support by 0.269 percentage points. 
 :::
 
 ::: {.callout-note icon="false" title="Problem 8"}
