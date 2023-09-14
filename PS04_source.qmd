@@ -385,10 +385,17 @@ ggplot(data = trump, aes(y = trump_support, x = non_white)) +
 **A.** If Representative Ocasio-Cortez saw the regression line `nw_mod` without seeing any of the data points, her prediction of Trump support for a region in which 61% of people identify as non-white would be around 43%, give or take. 
 
 ```{r}
-predict(nw_mod, newdata = data.frame(non_white = 61))
+ggplot(data = trump, aes(y = trump_support, x = non_white)) + 
+  geom_point() + 
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(x = "Percentage of non-white voters", 
+       y = "Percentage of voters supporting Trump", 
+       title = "Trump support and non-white voters in the US") +
+  theme_bw() + 
+  theme(plot.title = element_text(hjust = 0.5))
 ```
 
-**B.** Her prediction given the regression line would be a small overestimation by only about 1% considering the prediction model created. Using this numerical expression, the predicted value would be 41.91%
+**B.** Her prediction given the regression line would be about 43%. However, using the data points, the actual data demonstrates that at a 61% non-white population, the Trump support is at about 34%. This is a overestimation by about 9 percentage points. 
 
 $$\text{residual} = y - \hat{y}$$
 
