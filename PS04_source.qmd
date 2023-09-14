@@ -98,7 +98,7 @@ Does the relationship in @fig-TSG appear to be positive or negative? Does the re
 :::
 
 ::: {.callout-important icon="false" collapse="false" title="Problem 1 Answers"}
--   The relationship in Figure 1 appears to be positive and reasonably linear, with the exception of a few outliers. The graph is mostly skewed right. 
+-   The relationship in @fig-TSG appears to be positive and reasonably linear, with the exception of a few outliers. The graph is mostly skewed right. 
 :::
 
 ## The Correlation Coefficient (r)
@@ -218,7 +218,7 @@ Do you think it is a good idea to predict Trump support at 85% white poverty, ba
 :::
 
 ::: {.callout-important icon="false" collapse="false" title="Problem 4 Answers"}
--   No, because using this same least squares regression line, the relationship between `trump_support` and `poverty` at 85% poverty will be over 200%, which is way over the max percentage of 100%. A new model would need to be used for this white poverty level. 
+-   No, because using this same least squares regression line, the relationship between `trump_support` and `poverty` at 85% poverty will be over 200%, which is way over the max percentage of 100%. A new model would need to be used for this white poverty level. The model created used a maximum of 20% white poverty. 
 :::
 
 ## Residuals
@@ -264,7 +264,14 @@ Generate a scatterplot with a best-fitting line with `non_white` as the explanat
 
 ::: {.callout-important icon="false" collapse="false" title="Problem 5 Answers"}
 ```{r}
-# Type your code and comments inside the code chunk
+ggplot(data = trump, aes(y = trump_support, x = non_white)) + 
+  geom_point() + 
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(x = "Percentage of non-white voters", 
+       y = "Percentage of voters supporting Trump", 
+       title = "Trump support and non-white voters in the US") +
+  theme_bw() + 
+  theme(plot.title = element_text(hjust = 0.5))
 ```
 :::
 
@@ -273,10 +280,16 @@ Do you expect the correlation coefficient (for `non_white` and `trump_support`) 
 :::
 
 ::: {.callout-important icon="false" collapse="false" title="Problem 6 Answers"}
--   Delete this and put your text answer here.
+-   I expected the correlation between trump supporters and non-white voters/households to be negative, implying that as trump support increases, the number of non-white voters voting for trump decreases. 
 
 ```{r}
-# Type your code and comments inside the code chunk
+ggplot(data = trump, aes(y = trump_support, x = non_white)) + 
+  geom_point() + 
+  geom_smooth(method = "lm", se = FALSE) + 
+  labs(x = "Percentage of non-white voters", 
+       y = "Percentage of voters supporting Trump", 
+       title = "Trump support and non-white voters in the US") + 
+  theme_bw() + theme(plot.title = element_text(hjust = 0.5))
 
 ```
 :::
